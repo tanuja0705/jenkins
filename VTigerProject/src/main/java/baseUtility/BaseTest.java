@@ -15,32 +15,44 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import WD_JavaUtility.JavaUtility;
+import genericUtilities.ListenerImplementation;
 import genericUtilities.ReadingDataFromPropertiesFile;
 
 public class BaseTest {
 	public WebDriver driver=null;
 	public static WebDriver sdriver=null;
 	public ReadingDataFromPropertiesFile read=new ReadingDataFromPropertiesFile();
+	public ExtentSparkReporter esreport=null;
+	public ExtentReports ereport=null;
+	public static ExtentTest test=null;
+	public JavaUtility ju=new JavaUtility();
 	
 	@BeforeSuite(groups = {"Smoke","Regression"})
 	public void itsBeforeSuite() {
-		Reporter.log("Before Suite Started",true);
+		String date=ju.getSystemDate();
+		esreport= new ExtentSparkReporter("./advanceReport/Report"+"_"+date+".html");
+		esreport.config().setDocumentTitle("VTiger Report");
+		esreport.config().setReportName("Report"+"_"+ju.generateRandomNumber());
+		ereport= new ExtentReports();
+		ListenerImplementation.test.log(Status.INFO,"Before Suite Started");
 	}
 	
 	@BeforeClass(groups = {"Smoke","Regression"})
 	public void itsBeforeClass() {
-		Reporter.log("Before Class Started",true);
+		ListenerImplementation.test.log(Status.INFO,"Before Class Started");
 	}
 	
 	@BeforeMethod(groups = {"Smoke","Regression"})
 	public void itsBeforeMethod() throws Exception {
-		Reporter.log("Before Method Started",true);
+		ListenerImplementation.test.log(Status.INFO,"Before Method Started");
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -53,7 +65,7 @@ public class BaseTest {
 	
 	@AfterMethod(groups = {"Smoke","Regression"})
 	public void itsAfterMethod() throws InterruptedException {
-		Reporter.log("After Method Started",true);
+		ListenerImplementation.test.log(Status.INFO,"After Method Started");
 		WebElement ele=driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
 		Actions act=new Actions(driver);
 		act.moveToElement(ele).perform();
@@ -64,12 +76,12 @@ public class BaseTest {
 	
 	@AfterClass(groups = {"Smoke","Regression"})
 	public void itsAfterClass() {
-		Reporter.log("After Class Started",true);
+		ListenerImplementation.test.log(Status.INFO,"After Class Started");
 		driver.quit();
 	}
 	
 	@AfterSuite(groups = {"Smoke","Regression"})
 	public void itsAfterSuite() {
-		Reporter.log("After Suite Started",true);
+		ListenerImplementation.test.log(Status.INFO,"After Suite Started");
 	}
 }

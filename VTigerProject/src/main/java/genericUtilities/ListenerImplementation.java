@@ -19,17 +19,10 @@ import WD_JavaUtility.JavaUtility;
 import baseUtility.BaseTest;
 
 public class ListenerImplementation extends BaseTest implements ITestListener,ISuiteListener {
-	public ExtentSparkReporter esreport=null;
-	public ExtentReports ereport=null;
-	public static ExtentTest test=null;
-	public JavaUtility ju=new JavaUtility();
 
 	public void onStart(ISuite suite) {
 	    System.out.println("On start of suite");
-	    String date=ju.getSystemDate();
-	    esreport= new ExtentSparkReporter("./advanceReport/"+suite.getName()+"_"+date+".html");
-		esreport.config().setDocumentTitle("VTiger Report");
-		esreport.config().setReportName(suite.getName()+"_"+ju.generateRandomNumber());
+	   
 	  }
 	
 	public void onFinish(ISuite suite) {
@@ -38,7 +31,6 @@ public class ListenerImplementation extends BaseTest implements ITestListener,IS
 	
 	public void onStart(ITestContext context) {
 		    System.out.println("on start of test");
-		    ereport= new ExtentReports();
 			ereport.attachReporter(esreport);
 			ereport.setSystemInfo("OS", "Windows");
 			ereport.setSystemInfo("Environment", "Testing");
