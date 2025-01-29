@@ -55,13 +55,13 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Nov 14 13:27:19 IST 2024</td>
+<td>Started on:</td><td>Tue Dec 10 12:46:56 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>26 seconds (26330 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (354 ms)</td>
 </tr><tr>
-<td>Included groups:</td><td>Smoke </td>
+<td>Included groups:</td><td>Regression </td>
 </tr><tr>
 <td>Excluded groups:</td><td></td>
 </tr>
@@ -76,78 +76,19 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testCases.TC01_CreateOrganization_Test.itsAfterMethod()'><b>itsAfterMethod</b><br>Test class: testCases.TC01_CreateOrganization_Test<br/>
-<a href="#Output-197449185" onClick='toggleBox("Output-197449185", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-197449185" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-197449185">
-After Method Started<br/>
-</div>
-</td>
-<td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=130.0.6723.117)
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cd925327c7f07d637fcdbbc5703251c8, clickElement {id=f.ABA0E32685DDFA9CDAAB0CFF8F7694EE.d.58DABE49B39F02CC68B0610EAB146E9F.e.538}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57630}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57630/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (cd925327c7f07d637fcdbbc5703251c8)] -&gt; link text: Sign Out]
-Session ID: cd925327c7f07d637fcdbbc5703251c8
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at baseUtility.BaseTest.itsAfterMethod(BaseTest.java:61)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace197449185", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace197449185'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=130.0.6723.117)
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cd925327c7f07d637fcdbbc5703251c8, clickElement {id=f.ABA0E32685DDFA9CDAAB0CFF8F7694EE.d.58DABE49B39F02CC68B0610EAB146E9F.e.538}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57630}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57630/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (cd925327c7f07d637fcdbbc5703251c8)] -&gt; link text: Sign Out]
-Session ID: cd925327c7f07d637fcdbbc5703251c8
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at baseUtility.BaseTest.itsAfterMethod(BaseTest.java:61)
+<td title='testCases.SimpleTestCase_Test.itsBeforeSuite()'><b>itsBeforeSuite</b><br>Test class: testCases.SimpleTestCase_Test</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String)&quot; because &quot;genericUtilities.ListenerImplementation.test&quot; is null
+	at baseUtility.BaseTest.itsBeforeSuite(BaseTest.java:36)
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace762809053", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace762809053'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String)&quot; because &quot;genericUtilities.ListenerImplementation.test&quot; is null
+	at baseUtility.BaseTest.itsBeforeSuite(BaseTest.java:36)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
 	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
 	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:823)
-	at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:792)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:768)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:829)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -159,8 +100,8 @@ Session ID: cd925327c7f07d637fcdbbc5703251c8
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>12</td>
-<td>testCases.TC01_CreateOrganization_Test@7ae0a9ec</td></tr>
+<td>0</td>
+<td>testCases.SimpleTestCase_Test@792b749c</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
@@ -171,43 +112,15 @@ Session ID: cd925327c7f07d637fcdbbc5703251c8
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testCases.TC01_CreateOrganization_Test.itsAfterClass()'><b>itsAfterClass</b><br>Test class: testCases.TC01_CreateOrganization_Test</td>
+<td title='testCases.SimpleTestCase_Test.itsBeforeClass()'><b>itsBeforeClass</b><br>Test class: testCases.SimpleTestCase_Test</td>
 <td></td>
 <td>0</td>
-<td>testCases.TC01_CreateOrganization_Test@7ae0a9ec</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
+<td>testCases.SimpleTestCase_Test@792b749c</td></tr>
 <tr>
-<td title='testCases.SimpleTestCase_Test.show_Test()'><b>show_Test</b><br>Test class: testCases.SimpleTestCase_Test<br/>
-<a href="#Output-1554118033" onClick='toggleBox("Output-1554118033", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1554118033" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1554118033">
-SimpleTestCase_Test show_Test method<br/>
-</div>
-</td>
+<td title='testCases.SimpleTestCase_Test.itsBeforeMethod()'><b>itsBeforeMethod</b><br>Test class: testCases.SimpleTestCase_Test</td>
 <td></td>
 <td>0</td>
-<td>testCases.SimpleTestCase_Test@43df23d3</td></tr>
-<tr>
-<td title='testCases.TC01_CreateOrganization_Test.creatingOrg_Test()'><b>creatingOrg_Test</b><br>Test class: testCases.TC01_CreateOrganization_Test<br/>
-<a href="#Output-878506901" onClick='toggleBox("Output-878506901", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-878506901" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-878506901">
-creatingOrg_Test method of TC01_CreateOrganization_Test class<br/>
-</div>
-</td>
-<td></td>
-<td>3</td>
-<td>testCases.TC01_CreateOrganization_Test@7ae0a9ec</td></tr>
+<td>testCases.SimpleTestCase_Test@792b749c</td></tr>
 </table><p>
 </body>
 </html>

@@ -69,7 +69,7 @@ public class Creating_Documents_Test {
 		driver.findElement(By.name("notes_title")).sendKeys(title+ju.generateRandomNumber());
 		Select sel=new Select(driver.findElement(By.name("folderid")));
 		sel.selectByVisibleText("Default");
-		
+	
 		if(Ass_To.equals("User")) {
 			driver.findElement(By.xpath("//input[@value='U']")).click();
 			sel=new Select(driver.findElement(By.xpath("//select[@name='assigned_user_id']")));

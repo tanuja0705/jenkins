@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TimePass">
+      <class name="tpass.ECom_CheckingListener">
         <methods>
-          <include name="display"/>
+          <include name="amazon_Test"/>
+          <include name="closeBrowser"/>
+          <include name="lauchBrowser"/>
         </methods>
-      </class> <!-- TimePass -->
+      </class> <!-- tpass.ECom_CheckingListener -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

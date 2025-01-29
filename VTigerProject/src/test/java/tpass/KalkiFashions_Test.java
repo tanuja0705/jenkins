@@ -7,6 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,7 +16,14 @@ import org.testng.annotations.Test;
 public class KalkiFashions_Test {
 	@Test
 	public void addingProductToCart_Test() throws InterruptedException {
-		WebDriver driver=new ChromeDriver();
+		
+		WebDriver driver=null;
+		String browser="chrome";
+		
+		if(browser.equalsIgnoreCase("chrome"))
+			driver=new ChromeDriver();
+		else if(browser.equalsIgnoreCase("firefox"))
+			driver=new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		

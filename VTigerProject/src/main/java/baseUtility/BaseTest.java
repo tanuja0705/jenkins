@@ -30,36 +30,27 @@ public class BaseTest {
 	public WebDriver driver=null;
 	public static WebDriver sdriver=null;
 	public ReadingDataFromPropertiesFile read=new ReadingDataFromPropertiesFile();
-	public ExtentSparkReporter esreport=null;
-	public ExtentReports ereport=null;
-	public static ExtentTest test=null;
-	public JavaUtility ju=new JavaUtility();
 	
 	@BeforeSuite(groups = {"Smoke","Regression"})
 	public void itsBeforeSuite() {
-		String date=ju.getSystemDate();
-		esreport= new ExtentSparkReporter("./advanceReport/Report"+"_"+date+".html");
-		esreport.config().setDocumentTitle("VTiger Report");
-		esreport.config().setReportName("Report"+"_"+ju.generateRandomNumber());
-		ereport= new ExtentReports();
-		ListenerImplementation.test.log(Status.INFO,"Before Suite Started");
+		//ListenerImplementation.test.log(Status.INFO,"Before Suite Started");
 	}
 	
 	@BeforeClass(groups = {"Smoke","Regression"})
 	public void itsBeforeClass() {
-		ListenerImplementation.test.log(Status.INFO,"Before Class Started");
+		//ListenerImplementation.test.log(Status.INFO,"Before Class Started");
 	}
 	
 	@BeforeMethod(groups = {"Smoke","Regression"})
 	public void itsBeforeMethod() throws Exception {
-		ListenerImplementation.test.log(Status.INFO,"Before Method Started");
+		//ListenerImplementation.test.log(Status.INFO,"Before Method Started");
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get(read.readDataFromFile("url"));
-		driver.findElement(By.name("user_name")).sendKeys(read.readDataFromFile("user1"));
-		driver.findElement(By.name("user_password")).sendKeys(read.readDataFromFile("pwd1"));
-		driver.findElement(By.id("submitButton")).click();
+		driver.get("https://demowebshop.tricentis.com/login");
+		driver.findElement(By.id("Email")).sendKeys("sonawaletanuja55@gmail.com");
+		driver.findElement(By.id("Password")).sendKeys("Tanuja@0803");
+		driver.findElement(By.xpath("//input[@value='Log in']")).click();
 		sdriver=driver;
 	}
 	

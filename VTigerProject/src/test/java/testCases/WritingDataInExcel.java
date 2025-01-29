@@ -21,7 +21,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-public class a {
+public class WritingDataInExcel {
 	public Workbook wb;
 	@Test
 	public void readingDataFromExcelFile() throws EncryptedDocumentException, IOException {

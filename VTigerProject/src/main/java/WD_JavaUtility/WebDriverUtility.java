@@ -10,22 +10,22 @@ public class WebDriverUtility {
 	public Select sel=null;
 	public void scrollToTheElement(WebDriver driver,WebElement ele) {
 		act=new Actions(driver);
-		act.scrollToElement(ele);
+		act.scrollToElement(ele).perform();
 	}
 	
 	public void scrollToElementByValues(WebDriver driver,int x,int y) {
 		act=new Actions(driver);
-		act.scrollByAmount(x, y);
+		act.scrollByAmount(x, y).perform();
 	}
 	
 	public void performRightClick(WebDriver driver,WebElement ele ) {
 		act=new Actions(driver);
-		act.contextClick(ele);
+		act.contextClick(ele).perform();;
 	}
 	
 	public void sendData(WebDriver driver,WebElement ele, String str) {
 		act=new Actions(driver);
-		act.sendKeys(ele, str);
+		act.sendKeys(ele, str).perform();
 	}
 	
 	public void chooseByVisibleText(WebElement ele,String text) {

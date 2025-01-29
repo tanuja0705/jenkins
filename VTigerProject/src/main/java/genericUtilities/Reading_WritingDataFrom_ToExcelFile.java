@@ -8,17 +8,19 @@ import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.openqa.selenium.JavascriptExecutor;
 
 public class Reading_WritingDataFrom_ToExcelFile {
 	public Workbook wb;
 	Sheet sh;
 	FileInputStream fis;
-	public String readingDataFromExcelFile(String sheetName,int row,int cell) throws EncryptedDocumentException, IOException {
+	
+	public void makeExcelSheetInReadMood(String sheetName) throws Exception {
 		fis=new FileInputStream("./src/test/resources/TestData.xlsx");
 		wb=WorkbookFactory.create(fis);
 		sh=wb.getSheet(sheetName);
-		return sh.getRow(row).getCell(cell).toString();
+	}
+	public String readingDataFromExcelFile(int row,int cell) throws EncryptedDocumentException, IOException {
+		return sh.getRow(row).getCell(cell).getStringCellValue();
 		
 		
 	}

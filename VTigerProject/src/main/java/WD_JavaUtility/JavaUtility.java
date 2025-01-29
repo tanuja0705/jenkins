@@ -32,7 +32,7 @@ public class JavaUtility {
 	
 	public String generateDateBasedOnSpecification(int diff,String basedOn) {
 		Date d=new Date();
-		SimpleDateFormat sDate=new SimpleDateFormat("dd-MM-yyyy");
+		SimpleDateFormat sDate=new SimpleDateFormat("dd-MMM-yy");
 		String date=sDate.format(d);
 		System.out.println("Simple Date Format:"+date);
 		Calendar cal=sDate.getCalendar();

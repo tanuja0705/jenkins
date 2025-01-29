@@ -1,6 +1,7 @@
 package tpass;
 
 import java.time.Duration;
+import java.time.LocalDateTime;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,6 +13,7 @@ public class Try {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
 		driver.get("http://localhost:8888/");
+		System.out.println(LocalDateTime.now().toString().replace(":", "-"));
 		driver.quit();
 	}
 }
