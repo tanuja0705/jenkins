@@ -25,13 +25,14 @@ public class ListenerImplementation implements ITestListener,ISuiteListener {
 	public JavaUtility ju=new JavaUtility();
 	
 	public void onStart(ISuite suite) {
+		
 		String date=ju.getSystemDate();
-		esreport= new ExtentSparkReporter("./advanceReport/Report"+"_"+date+".html");
-		esreport.config().setDocumentTitle("VTiger Report");
-		esreport.config().setTheme(Theme.STANDARD);
+		esreport= new ExtentSparkReporter("./advanceReport/"+suite.getName()+"_"+date+".html");
+		esreport.config().setDocumentTitle("ECom");
+		esreport.config().setTheme(Theme.DARK);
 		esreport.config().setReportName("Report"+"_"+ju.generateRandomNumber());
 		ereport= new ExtentReports();
-	   
+		
 	  }
 	
 	public void onFinish(ISuite suite) {
@@ -39,10 +40,14 @@ public class ListenerImplementation implements ITestListener,ISuiteListener {
 	  }
 	
 	public void onStart(ITestContext context) {
-		    System.out.println("on start of test");
-		    ereport.attachReporter(esreport);
-			ereport.setSystemInfo("OS", "Windows");
-			ereport.setSystemInfo("Environment", "Testing");
+		System.out.println("contect:"+context);
+		
+		System.out.println("on start of test");
+		ereport.attachReporter(esreport);
+		ereport.setSystemInfo("OS", "Windows");
+		ereport.setSystemInfo("OS Version", "Windows 11");
+		ereport.setSystemInfo("Environment", "Testing");
+		ereport.setSystemInfo("URL", "asgdhtjykufyjhg");
 	 }
 	
 	public void onFinish(ITestContext context) {
@@ -53,6 +58,7 @@ public class ListenerImplementation implements ITestListener,ISuiteListener {
 	public void onTestStart(ITestResult result) {
 	    System.out.println("On Test Start");
 	    test=ereport.createTest(result.getName());
+	    ThreadLocalClass.setExtentTest(test);
 	    if(BaseTest.sdriver.getTitle().contains("Home"))
 			test.log(Status.PASS, "User is succefully loggedin😁😊");
 		else
@@ -65,9 +71,9 @@ public class ListenerImplementation implements ITestListener,ISuiteListener {
 	  }
 	
 	public void onTestFailure(ITestResult result) {
-	    TakesScreenshot ts=(TakesScreenshot)BaseTest.sdriver;
-	    String temp=ts.getScreenshotAs(OutputType.BASE64);
-	    test.addScreenCaptureFromBase64String(temp, result.getName());
+//	    TakesScreenshot ts=(TakesScreenshot)BaseTest.sdriver;
+//	    String temp=ts.getScreenshotAs(OutputType.BASE64);
+	   // test.addScreenCaptureFromBase64String(temp, result.getName());
 	    test.log(Status.FAIL, result.getName()+" test case got filed because of the screenshot reason");
 	    test.log(Status.FAIL, result.getThrowable());
 	   }

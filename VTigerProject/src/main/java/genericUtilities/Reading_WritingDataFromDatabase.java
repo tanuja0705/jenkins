@@ -15,6 +15,7 @@ public class Reading_WritingDataFromDatabase {
 		DriverManager.registerDriver(d);
 		
 		//Class.forName("com.mysql.cj.jdbc.Driver");
+		//Eg:DriverManager.getConnection("jdbc:mysql://49.249.28.218:3333/ninza_hrm","root","root");
 		con= DriverManager.getConnection(url, username, pwd);
 	}
 	

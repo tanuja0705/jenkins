@@ -25,7 +25,7 @@ public class ListenerImplementation1 implements ITestListener,ISuiteListener {
 	public void onStart(ISuite suite) {
 		String date=ju.getSystemDate();
 		esreport= new ExtentSparkReporter("./advanceReport/Report"+"_"+date+".html");
-		esreport.config().setDocumentTitle("VTiger Report");
+		esreport.config().setDocumentTitle("ECom");
 		esreport.config().setReportName("Report"+"_"+ju.generateRandomNumber());
 		ereport= new ExtentReports();
 	   
@@ -39,7 +39,9 @@ public class ListenerImplementation1 implements ITestListener,ISuiteListener {
 		    System.out.println("on start of test");
 		    ereport.attachReporter(esreport);
 			ereport.setSystemInfo("OS", "Windows");
+			ereport.setSystemInfo("OS Version", "Windows 11");
 			ereport.setSystemInfo("Environment", "Testing");
+			ereport.setSystemInfo("URL", "asgdhtjykufyjhg");
 	 }
 	
 	public void onFinish(ITestContext context) {
@@ -55,30 +57,30 @@ public class ListenerImplementation1 implements ITestListener,ISuiteListener {
 	
 	public void onTestSuccess(ITestResult result) {
 	    System.out.println("On Test Success");
-	    test.log(Status.PASS, result.getName()+" test case is passed");
+	    ThreadLocalClass.getExtentTest().log(Status.PASS, result.getName()+" test case is passed");
 	  }
 	
 	public void onTestFailure(ITestResult result) {
 	    TakesScreenshot ts=(TakesScreenshot)BaseClass1.sdriver;
 	    String temp=ts.getScreenshotAs(OutputType.BASE64);
-	    test.addScreenCaptureFromBase64String(temp, result.getName());
-	    test.log(Status.FAIL, result.getName()+" test case got filed because of the screenshot reason");
-	    test.log(Status.FAIL, result.getThrowable());
+	    ThreadLocalClass.getExtentTest().addScreenCaptureFromBase64String(temp, result.getName());
+	    ThreadLocalClass.getExtentTest().log(Status.FAIL, result.getName()+" test case got filed because of the screenshot reason");
+	    ThreadLocalClass.getExtentTest().log(Status.FAIL, result.getThrowable());
 	   }
 	
 	public void onTestSkipped(ITestResult result) {
 	    System.out.println("On Test Skipped");
-	    test.log(Status.SKIP, result.getName()+" test case is skipped");
+	    ThreadLocalClass.getExtentTest().log(Status.SKIP, result.getName()+" test case is skipped");
 	  }
 	
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 	    System.out.println("On Test Failed But Within Success Percentage");
-	    test.log(Status.FAIL, result.getName()+" test case is Failed But Within Success Percentage");
+	    ThreadLocalClass.getExtentTest().log(Status.FAIL, result.getName()+" test case is Failed But Within Success Percentage");
 	  }
 	
 	public void onTestFailedWithTimeout(ITestResult result) {
 		System.out.println("On Test Failed With Timeout");
-		test.log(Status.FAIL, result.getName()+" test case because of timeout");
+		ThreadLocalClass.getExtentTest().log(Status.FAIL, result.getName()+" test case because of timeout");
 	    onTestFailure(result);
 	  }
 

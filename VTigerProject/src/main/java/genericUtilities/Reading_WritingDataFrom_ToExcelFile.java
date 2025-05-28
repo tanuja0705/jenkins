@@ -19,6 +19,7 @@ public class Reading_WritingDataFrom_ToExcelFile {
 		wb=WorkbookFactory.create(fis);
 		sh=wb.getSheet(sheetName);
 	}
+	
 	public String readingDataFromExcelFile(int row,int cell) throws EncryptedDocumentException, IOException {
 		return sh.getRow(row).getCell(cell).getStringCellValue();
 		
@@ -30,7 +31,7 @@ public class Reading_WritingDataFrom_ToExcelFile {
 	}
 	
 	public int getTotalNumberOfColumns() {
-		return sh.getRow(1).getPhysicalNumberOfCells();
+		return sh.getRow(0).getPhysicalNumberOfCells();
 	}
 	
 	public void writeDataInSheet(String sheet, String data,int row,int cell) throws Exception {

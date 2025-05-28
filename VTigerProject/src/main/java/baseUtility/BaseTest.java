@@ -25,6 +25,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import WD_JavaUtility.JavaUtility;
 import genericUtilities.ListenerImplementation;
 import genericUtilities.ReadingDataFromPropertiesFile;
+import genericUtilities.ThreadLocalClass;
 
 public class BaseTest {
 	public WebDriver driver=null;
@@ -52,6 +53,7 @@ public class BaseTest {
 		driver.findElement(By.id("Password")).sendKeys("Tanuja@0803");
 		driver.findElement(By.xpath("//input[@value='Log in']")).click();
 		sdriver=driver;
+		ThreadLocalClass.setWebDriver(sdriver);
 	}
 	
 	@AfterMethod(groups = {"Smoke","Regression"})
