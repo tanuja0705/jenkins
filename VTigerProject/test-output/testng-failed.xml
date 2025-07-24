@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tpass.Check">
+      <class name="tpass.FlipkartMultipleWindow_Test">
         <methods>
-          <include name="method2"/>
-          <include name="method1"/>
+          <include name="addToCart_Test"/>
         </methods>
-      </class> <!-- tpass.Check -->
+      </class> <!-- tpass.FlipkartMultipleWindow_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
