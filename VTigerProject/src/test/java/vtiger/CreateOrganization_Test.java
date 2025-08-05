@@ -14,6 +14,7 @@ public class CreateOrganization_Test extends VTigerBaseClass{
 		ThreadLocalClass.getWebDiver().findElement(By.name("accountname")).sendKeys("ShivSakti_"+ju.generateRandomNumber());
 		ThreadLocalClass.getWebDiver().findElement(By.xpath("//input[contains(@title,'Save')]")).click();
 		System.out.println("createOrg_Test");
+		System.out.println("Byee");
 	}
 	
 	@Test
