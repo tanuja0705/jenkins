@@ -9,8 +9,8 @@ import org.json.simple.parser.ParseException;
 
 public class ReadingDataFromJsonFile {
 	public String readDataFromJsonFile(String key) throws Exception, IOException, ParseException {
-		JSONParser jp=new JSONParser();
-		Object obj=jp.parse(new FileReader("./testData/LaunchingData.json"));
+		JSONParser parse=new JSONParser();
+		Object obj=parse.parse(new FileReader("./testData/LaunchingData.json"));
 		JSONObject jobj=(JSONObject)obj;
 		
 		return (String)jobj.get(key);
